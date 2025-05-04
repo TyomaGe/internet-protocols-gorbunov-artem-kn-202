@@ -75,7 +75,9 @@ class DNSCache:
                             qname: data for qname, data in records.items()
                             if current_time <= data[0]
                         }
-            print("Cache was loaded")
+                print("Cache was loaded")
+            else:
+                print("Cache is empty")
         except Exception as e:
             print(f"Cache load error: {e}")
 
