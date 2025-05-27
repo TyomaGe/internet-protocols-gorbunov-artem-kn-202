@@ -5,7 +5,9 @@ class ExceptionsFactory:
             KeyboardInterrupt,
             NoFriendsException,
             PrivateAccountException,
-            NoAlbumsException
+            NoAlbumsException,
+            NoGroupsException,
+            UnicodeEncodeError
         )
 
 
@@ -25,5 +27,10 @@ class PrivateAccountException(Exception):
 
 
 class NoAlbumsException(Exception):
+    def __init__(self, message="User has no albums"):
+        super().__init__(message)
+
+
+class NoGroupsException(Exception):
     def __init__(self, message="User has no albums"):
         super().__init__(message)

@@ -32,7 +32,7 @@ class GetFriendListCommand(AbstractCommand):
         f_name, l_name = self.__api_handler.get_user_full_name(user_id)
         print(f"\n\033[94mFriend list of {f_name} {l_name}\033[0m")
         for friend in friends_ids:
-            sleep(0.1)
+            sleep(0.2)
             first_name, last_name = self.__api_handler.get_user_full_name(friend)
             print(first_name, last_name)
         else:

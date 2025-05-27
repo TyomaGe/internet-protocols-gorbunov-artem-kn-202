@@ -11,3 +11,9 @@ class GetFriendList:
 class GetAlbumList:
     name = "albums"
     description = ""
+
+
+@dataclass(frozen=True)
+class GetGroupList:
+    name = "groups"
+    description = ""

@@ -1,7 +1,7 @@
 from AbstractCommand import AbstractCommand
 from CommandConfig import GetAlbumList
 from APIHandler import APIHandler
-from Exceptions import NoAlbumsException
+from Exceptions import NoAlbumsException, PrivateAccountException
 
 
 class GetAlbumListCommand(AbstractCommand):
@@ -22,6 +22,9 @@ class GetAlbumListCommand(AbstractCommand):
 
     def display_albums(self, user_id):
         response = self.__get_albums(user_id)
+        if "error" in response:
+            error_msg = response["error"]["error_msg"]
+            raise PrivateAccountException(error_msg)
         quantity = response["response"]["count"]
         f_name, l_name = self.__api_handler.get_user_full_name(user_id)
         if not quantity:

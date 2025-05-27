@@ -1,5 +1,6 @@
 from GetFriendListCommand import GetFriendListCommand
 from GetAlbumListCommand import GetAlbumListCommand
+from GetGroupListCommand import GetGroupListCommand
 
 
 class CommandsFactory:
@@ -7,4 +8,5 @@ class CommandsFactory:
         return (
             GetFriendListCommand,
             GetAlbumListCommand,
+            GetGroupListCommand
         )
