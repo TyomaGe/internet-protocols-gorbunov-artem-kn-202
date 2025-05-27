@@ -6,6 +6,7 @@ class GetFriendList:
     name = "friends"
     description = ""
 
+
 @dataclass(frozen=True)
 class GetAlbumList:
     name = "albums"
